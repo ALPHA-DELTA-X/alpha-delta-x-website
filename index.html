@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alpha Delta X | Think Alpha. Execute Delta.</title>
-  <meta name="description" content="Alpha Delta X — technology, intelligence and trading. Think Alpha. Execute Delta.">
+  <meta name="description" content="Alpha Delta X — technology and intelligence. Think Alpha. Execute Delta.">
   <meta name="theme-color" content="#030817">
   <meta property="og:title" content="Alpha Delta X">
   <meta property="og:description" content="Think Alpha. Execute Delta.">
-  <meta property="og:image" content="alpha_delta_x_logo.png">
-  <link rel="icon" href="alpha_delta_x_logo.png">
+  <meta property="og:image" content="Alpha_Delta_X_Neon_Logo.png">
+  <link rel="icon" href="Alpha_Delta_X_Neon_Logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #030817;
@@ -87,18 +87,16 @@
     }
     nav { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .wordmark {
-      display: flex; align-items: center; gap: 12px;
-      font-family: "Space Grotesk", sans-serif; font-weight: 700;
-      letter-spacing: .16em; font-size: 14px;
+      display: inline-flex; align-items: baseline; gap: .42em;
+      font-family: "Montserrat", "Inter", sans-serif; font-weight: 600;
+      letter-spacing: .24em; font-size: 15px; line-height: 1; white-space: nowrap;
+      color: #fff;
     }
-    .wordmark .mark {
-      width: 30px; height: 30px; border-radius: 8px;
-      display: grid; place-items: center;
-      background: linear-gradient(140deg, rgba(26,109,255,.25), rgba(0,230,168,.2));
-      border: 1px solid var(--line-strong);
-      font-size: 15px; letter-spacing: 0; color: var(--teal);
+    .wordmark .x {
+      font-weight: 700;
+      background: linear-gradient(120deg, var(--cyan), var(--teal));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .wordmark .x { color: var(--teal); }
     .navlinks { display: flex; align-items: center; gap: 34px; font-size: 14px; color: var(--muted); }
     .navlinks a { position: relative; transition: color .25s; }
     .navlinks a:not(.btn)::after {
@@ -143,12 +141,13 @@
       filter: blur(40px); z-index: -1;
       animation: breathe 7s ease-in-out infinite;
     }
-    .logo {
-      width: 100%; height: auto;
-      mix-blend-mode: screen;             /* blends the logo's dark backdrop into the page */
-      mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 60%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 60%, transparent 100%);
+    .logo { width: 100%; height: auto; border-radius: 12px; }
+    .logo-missing {
+      display: none; padding: 18px; border: 1px dashed var(--line-strong); border-radius: 12px;
+      color: var(--muted); font-size: 14px;
     }
+    .logo-stage.failed .logo { display: none; }
+    .logo-stage.failed .logo-missing { display: block; }
     @keyframes breathe { 0%,100% { opacity: .75; transform: scale(1); } 50% { opacity: 1; transform: scale(1.08); } }
 
     .pill {
@@ -384,9 +383,7 @@
   <div class="page">
     <header id="header">
       <nav class="wrap" aria-label="Main navigation">
-        <a class="wordmark" href="#top" aria-label="Alpha Delta X home">
-          <span class="mark">α</span>ALPHA DELTA <span class="x">X</span>
-        </a>
+        <a class="wordmark" href="#top" aria-label="Alpha Delta X home">ALPHA DELTA <span class="x">X</span></a>
         <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -405,12 +402,13 @@
       <section class="hero" id="top">
         <div class="wrap hero-inner">
           <div class="logo-stage reveal">
-            <img class="logo" src="alpha_delta_x_logo.png" alt="Alpha Delta X logo — Think Alpha. Execute Delta." width="1536" height="1024">
+            <img class="logo" id="logo" src="Alpha_Delta_X_Neon_Logo.png" alt="Alpha Delta X logo — Think Alpha. Execute Delta." width="1536" height="1024">
+            <p class="logo-missing">Logo file not found. Check that the image in your repo is named exactly <code>Alpha_Delta_X_Neon_Logo.png</code>.</p>
           </div>
-          <div class="pill reveal d1"><span class="dot"></span>TECHNOLOGY · INTELLIGENCE · TRADING</div>
+          <div class="pill reveal d1"><span class="dot"></span>INTELLIGENCE · TECHNOLOGY · PRECISION</div>
           <h1 class="reveal d2">Think Alpha.<br><span class="grad-text">Execute Delta.</span></h1>
           <p class="lead reveal d3">
-            Bringing analytical intelligence and systematic thinking to the world of trading —
+            Where analytical intelligence meets systematic thinking —
             at the intersection of data, technology and disciplined execution.
           </p>
           <div class="hero-ctas reveal d4">
@@ -426,10 +424,10 @@
       <!-- MARQUEE -->
       <div class="marquee" aria-hidden="true">
         <div class="track">
-          <span>Quantitative Research</span><span>Data Intelligence</span><span>Algorithmic Trading</span>
-          <span>Systematic Execution</span><span>Risk Discipline</span><span>Technology Innovation</span>
-          <span>Quantitative Research</span><span>Data Intelligence</span><span>Algorithmic Trading</span>
-          <span>Systematic Execution</span><span>Risk Discipline</span><span>Technology Innovation</span>
+          <span>Research &amp; Analysis</span><span>Data Intelligence</span><span>Intelligent Systems</span>
+          <span>Systematic Execution</span><span>Disciplined Thinking</span><span>Technology Innovation</span>
+          <span>Research &amp; Analysis</span><span>Data Intelligence</span><span>Intelligent Systems</span>
+          <span>Systematic Execution</span><span>Disciplined Thinking</span><span>Technology Innovation</span>
         </div>
       </div>
 
@@ -467,12 +465,12 @@
               <div class="sym">Δ</div>
               <span class="tag">02 — Execute</span>
               <h3>Delta</h3>
-              <p>Translate insight into action with structured strategies, technology and a
+              <p>Translate insight into action with structured frameworks, technology and a
                 disciplined approach to execution.</p>
               <ul>
-                <li>Rules-based strategy design</li>
-                <li>Automated, low-latency systems</li>
-                <li>Continuous risk awareness</li>
+                <li>Structured, rules-based frameworks</li>
+                <li>Automated, efficient systems</li>
+                <li>Continuous refinement</li>
               </ul>
             </article>
           </div>
@@ -488,7 +486,7 @@
             <div class="step reveal">
               <div class="node">01</div>
               <h3>Observe</h3>
-              <p>Gather and structure market data into a clean, reliable foundation.</p>
+              <p>Gather information and structure it into a clean, reliable foundation.</p>
             </div>
             <div class="step reveal d1">
               <div class="node">02</div>
@@ -498,7 +496,7 @@
             <div class="step reveal d2">
               <div class="node">03</div>
               <h3>Execute</h3>
-              <p>Deploy strategies systematically, free from impulse and noise.</p>
+              <p>Act systematically, free from impulse and noise.</p>
             </div>
             <div class="step reveal d3">
               <div class="node">04</div>
@@ -518,15 +516,15 @@
               <h2 class="reveal d1">Technology at the core.</h2>
             </div>
             <p class="intro reveal d2">
-              We bring together quantitative thinking, data intelligence and computational
-              capability to approach markets with structure, precision and adaptability.
+              We bring together analytical thinking, data intelligence and computational
+              capability to approach complex problems with structure, precision and adaptability.
             </p>
           </div>
 
           <div class="bento">
             <div class="tile wide reveal">
-              <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-              <h3>Quantitative Research</h3>
+              <div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg></div>
+              <h3>Research &amp; Analysis</h3>
               <p>Statistical rigour applied to every idea — measured, tested and challenged before it matters.</p>
               <svg class="spark" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 L20 44 L40 48 L60 34 L80 38 L100 26 L120 30 L140 18 L160 22 L180 8 L200 12" fill="none" stroke="url(#sg)" stroke-width="1.5"/><defs><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#1a6dff"/><stop offset="1" stop-color="#00e6a8"/></linearGradient></defs></svg>
             </div>
@@ -537,8 +535,8 @@
             </div>
             <div class="tile reveal">
               <div class="ico"><svg viewBox="0 0 24 24"><path d="M8 6l-6 6 6 6"/><path d="M16 6l6 6-6 6"/><path d="M14 4l-4 16"/></svg></div>
-              <h3>Algorithmic Trading</h3>
-              <p>Strategies expressed as code — consistent, testable, repeatable.</p>
+              <h3>Intelligent Systems</h3>
+              <p>Ideas expressed as code — consistent, testable, repeatable.</p>
             </div>
             <div class="tile reveal d1">
               <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
@@ -548,7 +546,7 @@
             <div class="tile full-sm reveal d2">
               <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4z"/></svg></div>
               <h3>Technology Innovation</h3>
-              <p>Continuously evolving our tools as markets and technology advance.</p>
+              <p>Continuously evolving our tools as technology and ideas advance.</p>
             </div>
           </div>
         </div>
@@ -561,8 +559,8 @@
             <p class="kicker">Our vision</p>
             <h2>Beyond <span class="grad-text">conventional</span> thinking.</h2>
             <p class="intro">
-              To build a technology-driven trading organisation where ideas are informed by data,
-              strategies are shaped by intelligence, and execution is guided by precision.
+              To build a technology-driven organisation where ideas are informed by data,
+              decisions are shaped by intelligence, and execution is guided by precision.
             </p>
             <p class="quote">Think Alpha. Execute Delta.</p>
           </div>
@@ -574,8 +572,8 @@
       <div class="wrap">
         <div class="foot-top">
           <div>
-            <a class="wordmark" href="#top"><span class="mark">α</span>ALPHA DELTA <span class="x">X</span></a>
-            <p>Technology, intelligence and trading — built on rigorous thinking and disciplined execution.</p>
+            <a class="wordmark" href="#top">ALPHA DELTA <span class="x">X</span></a>
+            <p>Technology and intelligence — built on rigorous thinking and disciplined execution.</p>
           </div>
           <div class="foot-links">
             <div>
@@ -592,7 +590,7 @@
         </div>
         <div class="foot-bottom">
           <span>© <span id="year"></span> Alpha Delta X. All rights reserved.</span>
-          <span class="disclaimer">Content on this site is for informational purposes only and does not constitute investment advice.</span>
+          <span class="disclaimer">Content on this site is for general informational purposes only.</span>
         </div>
       </div>
     </footer>
@@ -601,6 +599,22 @@
   <script>
     (() => {
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Logo: try common file-name variants (GitHub Pages is case-sensitive)
+      const logo = document.getElementById("logo");
+      const candidates = [
+        "Alpha_Delta_X_Neon_Logo.png", "alpha_delta_x_neon_logo.png", "alpha_delta_x_logo.png", "alpha_delta_x_logo.PNG", "Alpha_Delta_X_Logo.png",
+        "alpha_delta_x_logo.jpg", "alpha_delta_x_logo.jpeg", "alpha-delta-x-logo.png",
+        "logo.png", "Logo.png", "logo.jpg"
+      ];
+      let attempt = 0;
+      logo.addEventListener("error", () => {
+        attempt++;
+        if (attempt < candidates.length) logo.src = candidates[attempt];
+        else logo.parentElement.classList.add("failed");
+      });
+      // If the first load already failed before this script ran, start the fallback now
+      if (logo.complete && logo.naturalWidth === 0) logo.dispatchEvent(new Event("error"));
 
       // Header state on scroll
       const header = document.getElementById("header");
@@ -636,7 +650,7 @@
         });
       });
 
-      // Animated market-field background: flowing price-like lines + drifting nodes
+      // Animated background: flowing lines + drifting network nodes
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const canvas = document.getElementById("field");
       const ctx = canvas.getContext("2d");
@@ -673,7 +687,7 @@
             const y = h * L.y
               + Math.sin(p * Math.PI * L.freq + t * L.speed * 60 + i) * h * L.amp
               + Math.sin(p * Math.PI * L.freq * 3.7 + t * L.speed * 90) * h * L.amp * .25
-              - p * h * .12; // gentle upward trend
+              - p * h * .12; // gentle upward drift
             x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
           }
           ctx.strokeStyle = `rgba(${L.color},${L.a})`;
